@@ -1,0 +1,49 @@
+<!--
+
+То, что мы напишем внутри тега <Context></Context> это настройки
+соединения с БД на уровне данного вэб-приложения (в контексте
+данного вэб-приложения), а не в контексте всего сервера.
+Если на сервере будет работать 50 приложений, нам не придётся
+перезапускать весь сервер с 50 приложениями, это очень долго,
+а достаточно будет перезапустить данное конкретное приложение.
+
+В web.xml нужно будет также прописать ссылку на ресурсы
+(<resourse-ref>):
+
+(в web.xml)
+<resourse-ref>
+          <description>DB Connection</description>
+          <res-ref-name>jdbc/MyDB</res-ref-name>
+          <res-type>javax.sql.DataSource</res-type>
+          <res-auth>Container</res-auth>
+  <resourse-ref>
+(в web.xml)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Context>
+    <Resource name="jdbc/MyDB"
+              auth="Container"
+              type="javax.sql.DataSource"
+              maxActive="100"
+              maxIdle="30"
+              minIdle="5"
+              maxWait="1000"
+              username="root"
+              password="root"
+              driverClassName="com.mysql.jdbc.Driver"
+              url="jdbc:mysql://localhost:3306/test"/>
+</Context>
+-->

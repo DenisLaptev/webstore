@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+
+<!--Servlets-->
+  <servlet>
+    <servlet-name>RegistrationRequestServlet</servlet-name>
+    <servlet-class>com.lap.controllers.RegistrationRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>RegistrationRequestServlet</servlet-name>
+    <url-pattern>/registration</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>DoRegistrationServlet</servlet-name>
+    <servlet-class>com.lap.controllers.DoRegistrationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoRegistrationServlet</servlet-name>
+    <url-pattern>/doRegistration</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>LoginRequestServlet</servlet-name>
+    <servlet-class>com.lap.controllers.LoginRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginRequestServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>DoLoginServlet</servlet-name>
+    <servlet-class>com.lap.controllers.DoLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoLoginServlet</servlet-name>
+    <url-pattern>/doLogin</url-pattern>
+  </servlet-mapping>
+
+<!--
+
+  <servlet>
+    <servlet-name>TableOfProductsServlet</servlet-name>
+    <servlet-class>com.lap.controllers.TableOfProductsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TableOfProductsServlet</servlet-name>
+    <url-pattern>/products</url-pattern>
+  </servlet-mapping>
+
+-->
+
+  <servlet>
+    <servlet-name>TableOfUsersServlet</servlet-name>
+    <servlet-class>com.lap.controllers.TableOfUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TableOfUsersServlet</servlet-name>
+    <url-pattern>/usersServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <servlet-class>com.lap.controllers.DeleteUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteUserServlet</servlet-name>
+    <url-pattern>/deleteUser</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>TableOfProductGroupsServlet</servlet-name>
+    <servlet-class>com.lap.controllers.TableOfProductGroupsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TableOfProductGroupsServlet</servlet-name>
+    <url-pattern>/productGroupsServlet</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>AddProductGroupServlet</servlet-name>
+    <servlet-class>com.lap.controllers.AddProductGroupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddProductGroupServlet</servlet-name>
+    <url-pattern>/addProductGroup</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>DeleteProductGroupServlet</servlet-name>
+    <servlet-class>com.lap.controllers.DeleteProductGroupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteProductGroupServlet</servlet-name>
+    <url-pattern>/deleteProductGroup</url-pattern>
+  </servlet-mapping>
+
+
+  <servlet>
+    <servlet-name>CookieServlet</servlet-name>
+    <servlet-class>com.lap.controllers.CookieServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CookieServlet</servlet-name>
+    <url-pattern>/cookie</url-pattern>
+  </servlet-mapping>
+
+<!--
+
+  <resourse-ref>
+          <description>DB Connection</description>
+          <res-ref-name>jdbc/MyDB</res-ref-name>
+          <res-type>javax.sql.DataSource</res-type>
+          <res-auth>Container</res-auth>
+  <resourse-ref>
+
+-->
+
+</web-app>
+
+
+<!--
+
+Для передачи обработки запросов между сервлетами
+служит класс RequestDispatcher, в котором предусмотрено 2 метода:
+forward() - дальнейшая обработка запроса целиком передаётся в
+вызванный сервлет;
+include() - по завершении обработки во втором сервлете управление
+будет возвращено обратно в первый сервлет.
+Пример.
+
+RequestDispatcher rd = context.getRequestDispatcher(path);
+rd.forward(request,response);
+
+Также можно использовать для передачи управления:
+response.sendRedirect();
+-->
